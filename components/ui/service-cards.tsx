@@ -29,8 +29,7 @@ export function InteractiveServiceCards({
 					<div
 						key={index}
 						className={cn(
-							"relative group overflow-hidden rounded-[2rem] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer flex flex-col p-5 md:p-8 border border-zinc-100/50",
-							service.bg,
+							"relative group overflow-hidden rounded-[2rem] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer flex flex-col p-5 md:p-8 border border-zinc-100/50 bg-zinc-50 hover:bg-zinc-100/80",
 							isActive
 								? "h-[320px] md:h-auto md:flex-[2.5]"
 								: "h-[110px] md:h-auto md:flex-1"
@@ -86,7 +85,8 @@ export function InteractiveServiceCards({
 
 							<div
 								className={cn(
-									"flex items-center justify-center rounded-full bg-white shadow-sm transition-all duration-500",
+									"flex items-center justify-center rounded-full shadow-sm transition-all duration-500",
+									service.bg, // Move the color here
 									isActive ? "w-14 h-14" : "w-10 h-10 md:w-14 md:h-14"
 								)}
 							>
