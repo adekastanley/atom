@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { Button } from "@/components/ui/button";
+import { InteractiveServiceCards } from "@/components/ui/service-cards";
 
 const services = [
 	{
@@ -204,7 +205,7 @@ export default function Home() {
 			</section>
 
 			{/* 3. Stats Section */}
-			<section className="bg-white pb-24 md:pb-32 border-b border-zinc-100">
+			{/* <section className="bg-white pb-24 md:pb-32 border-b border-zinc-100">
 				<div className="container mx-auto px-4 md:px-8">
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-zinc-200">
 						<FadeIn delay={0.1} className="pt-8 md:pt-0 md:px-8 first:pl-0">
@@ -233,7 +234,7 @@ export default function Home() {
 						</FadeIn>
 					</div>
 				</div>
-			</section>
+			</section> */}
 
 			{/* 4. Services Grid (Minimalist Cards) */}
 			<section className="bg-white py-24 md:py-32">
@@ -248,29 +249,9 @@ export default function Home() {
 						</p>
 					</FadeIn>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-						{services.slice(0, 4).map((service, idx) => (
-							<FadeIn key={service.title} delay={0.1 * idx}>
-								<Link href={service.href} className="block group h-full">
-									<div className="bg-zinc-50 rounded-[2rem] p-8 h-full border border-zinc-100 transition-all hover:bg-zinc-100 hover:scale-[1.02]">
-										<div
-											className={`w-10 h-10 rounded-full ${service.bg} flex items-center justify-center mb-12`}
-										>
-											{service.icon}
-										</div>
-										<h3 className="text-xl font-bold text-zinc-900 mb-4 pr-4 leading-tight">
-											{service.title}
-										</h3>
-										<p className="text-sm text-zinc-500 leading-relaxed font-medium">
-											Our team offers solutions and insights for your business.
-											We use tools to turn raw data into strategies that drive
-											growth.
-										</p>
-									</div>
-								</Link>
-							</FadeIn>
-						))}
-					</div>
+					<FadeIn delay={0.1} className="w-full">
+						<InteractiveServiceCards services={services.slice(0, 4)} />
+					</FadeIn>
 
 					<div className="mt-12 text-center">
 						<Link
